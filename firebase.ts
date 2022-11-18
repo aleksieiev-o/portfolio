@@ -1,6 +1,11 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
 
+// interface InitApp {
+//   firebaseApp: FirebaseApp;
+//   firebaseDB: Database;
+// }
+
 const {
   VUE_APP_API_KEY,
   VUE_APP_AUTH_DOMAIN,
@@ -12,7 +17,7 @@ const {
   VUE_APP_MEASUREMENT_ID,
 } = process.env;
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: VUE_APP_API_KEY,
   authDomain: VUE_APP_AUTH_DOMAIN,
   databaseURL: VUE_APP_DATABASE_URL,
@@ -23,6 +28,13 @@ const firebaseConfig = {
   measurementId: VUE_APP_MEASUREMENT_ID,
 };
 
-export const firebaseApp = initializeApp(firebaseConfig);
+export function initializeFirebaseApp() {
+  const firebaseApp = initializeApp(firebaseConfig);
 
-export const firebaseDB = getDatabase(firebaseApp);
+  const firebaseDB = getDatabase(firebaseApp);
+
+  return {
+    firebaseApp,
+    firebaseDB,
+  };
+}
