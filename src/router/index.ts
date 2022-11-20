@@ -8,13 +8,19 @@ import NotFound from '@/views/NotFound.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
-    name: 'AppHome',
+    name: 'Home',
     component: AppHome,
+    meta: {
+      isListRoute: true,
+    },
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: NotFound,
+    meta: {
+      isListRoute: false,
+    },
   },
 ];
 

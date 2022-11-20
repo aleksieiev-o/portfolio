@@ -38,9 +38,10 @@
   .home-container {
     flex-flow: column nowrap;
     @include flex-layout();
-    @include between-children {
-      margin-bottom: 2rem;
-    }
+  }
+
+  .image {
+    margin-bottom: 2rem;
   }
 
   .socials {

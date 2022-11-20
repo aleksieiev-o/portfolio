@@ -13,6 +13,7 @@ $error-faded-color: #E85D4E;
 
 // App screen sizes
 $desktop-size: 1280px;
+$tablet-large-size: 992px;
 $tablet-size: 768px;
 $mobile-size: 360px;
 $tablet-height-size: 700px;
@@ -35,3 +36,7 @@ $element-radius: 4px;
 
 // App spacing
 $spacing: 8px;
+
+// Shadows
+$main-shadow--light: 0 1px 10px 1px rgba(#333333, 0.1);
+$main-shadow--dark: 0 1px 10px 1px rgba(#333333, 0.1);

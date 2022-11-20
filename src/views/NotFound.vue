@@ -3,7 +3,7 @@
     <div class="container not-found-container">
       <p class="description">Page not found</p>
 
-      <button @click="router.push({ name: 'AppHome' })" class="go-to-home-button">Go home</button>
+      <button @click="router.push({ name: 'Home' })" class="go-to-home-button">Go home</button>
     </div>
   </div>
 </template>

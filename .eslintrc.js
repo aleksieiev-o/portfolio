@@ -20,6 +20,7 @@ module.exports = {
     withDefaults: 'readonly',
   },
   rules: {
+    'no-shadow': 'off',
     'arrow-body-style': 0,
     camelcase: 0,
     'no-underscore-dangle': 0,

@@ -28,6 +28,7 @@
 
 <style lang="scss" scoped>
   .app {
+    background-color: #e6e6e6;
     height: 100%;
     overflow: hidden;
     flex-flow: column nowrap;
