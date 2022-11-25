@@ -3,7 +3,12 @@
     <div class="container home-container">
       <div class="image">image</div>
 
-      <div class="description">description</div>
+      <div class="info">
+        <div class="name">Alexander Alexeev</div>
+        <div class="description">Frontend developer</div>
+      </div>
+
+      <button>Get in touch</button>
 
       <div class="socials">
         <button class="socials-button">1</button>
@@ -42,6 +47,15 @@
 
   .image {
     margin-bottom: 2rem;
+  }
+
+  .info {
+    flex-flow: column nowrap;
+    margin-bottom: 2rem;
+    @include between-children {
+      margin-bottom: 3rem;
+    }
+    @include flex-layout();
   }
 
   .socials {
