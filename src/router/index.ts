@@ -1,7 +1,7 @@
 import {
  createRouter, createWebHistory, Router, RouteRecordRaw,
 } from 'vue-router';
-import initApp from '@/router/middlewares/initApp';
+import initAppMiddleware from '@/router/middlewares/initApp.middleware';
 import AppHome from '@/views/AppHome/index.vue';
 import NotFound from '@/views/NotFound.vue';
 
@@ -30,7 +30,7 @@ const router: Router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-  await initApp.call(router, { next });
+  await initAppMiddleware.call(router, { next });
   await next();
 });
 
