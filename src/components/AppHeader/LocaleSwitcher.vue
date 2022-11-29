@@ -25,7 +25,7 @@
 
 <script lang="ts">
   import { defineComponent, ref } from 'vue';
-  // import IconExpandMore from '@/components/AppHeader/iconComponents/IconExpandMore.vue';
+  // import ExpandMoreIcon from '@/components/AppHeader/iconComponents/ExpandMore.icon.vue';
 
   enum LocaleCode {
     EN_US = 'EN-us',
@@ -40,7 +40,7 @@
   export default defineComponent({
     name: 'LocaleSwitcher',
     components: {
-      // IconExpandMore,
+      // ExpandMoreIcon,
     },
     emits: ['setCurrentLocale'],
 

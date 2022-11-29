@@ -7,7 +7,7 @@
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    name: 'IconExpandMore',
+    name: 'ExpandMoreIcon',
 
     setup() {
       return {};

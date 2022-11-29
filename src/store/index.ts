@@ -3,7 +3,10 @@ import {
   createStore, ModuleTree, Plugin, Store, useStore,
 } from 'vuex';
 import { InjectionKey } from 'vue';
-import firebaseModule from '@/store/firebase.module';
+import loadingModule from '@/store/loading.module';
+import userInfoModule from '@/store/userInfo.module';
+import projectsModule from '@/store/projects.module';
+import skillsModule from '@/store/skills.module';
 
 const DEV_MODE = process.env.NODE_ENV === 'development';
 
@@ -16,7 +19,10 @@ export const injectionKey: InjectionKey<Store<RootState>> = Symbol('vuex injecti
 const plugins: Plugin<RootState>[] = DEV_MODE ? [createLogger()] : [];
 
 const modules: ModuleTree<RootState> = {
-  firebaseModule,
+  loadingModule,
+  userInfoModule,
+  projectsModule,
+  skillsModule,
 };
 
 export const store = createStore<RootState>({
@@ -35,9 +41,8 @@ export const store = createStore<RootState>({
     },
   },
   actions: {
-    async initApp({ commit, dispatch }) {
-      await dispatch('initFirebaseApp');
-      await commit('toggleInitAppStatus');
+    initApp({ commit }) {
+      commit('toggleInitAppStatus');
     },
   },
 });

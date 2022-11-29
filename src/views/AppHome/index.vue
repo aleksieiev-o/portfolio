@@ -4,7 +4,9 @@
       <div class="image">image</div>
 
       <div class="info">
-        <div class="name">Alexander Alexeev</div>
+        <div class="name">
+          {{ fullName }}
+        </div>
         <div class="description">Frontend developer</div>
       </div>
 
@@ -23,10 +25,24 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent, onMounted } from 'vue';
+  import { useAppStore } from '@/store';
 
   export default defineComponent({
     name: 'AppHome',
+
+    setup() {
+      const store = useAppStore();
+      const fullName = `${process.env.VUE_APP_FIRST_NAME} ${process.env.VUE_APP_LAST_NAME}`;
+
+      onMounted(() => {
+        // store.dispatch('loadMainImage');
+      });
+
+      return {
+        fullName,
+      };
+    },
   });
 </script>
 
