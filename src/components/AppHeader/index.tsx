@@ -6,7 +6,7 @@ import AppLocaleToggle from '@/components/ui/AppLocaleToggle';
 
 const AppHeader: FC = (): ReactElement => {
   return (
-    <header className={'w-full h-20 flex flex-row items-center justify-between overflow-hidden shadow-md mb-4'}>
+    <header className={'w-full h-20 flex flex-row items-center justify-between overflow-hidden shadow-md'}>
       <Link href={RoutePath.HOME} className={'w-20 h-20 mr-4 flex items-center justify-center'}>
         OA
       </Link>

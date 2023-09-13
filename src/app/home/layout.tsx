@@ -9,7 +9,7 @@ export const metadata: Metadata = createAppMetaData({
 
 const HomeLayout: FC<PropsWithChildren> = ({children}): ReactElement => {
   return (
-    <section className={'layout-wrapper'}>
+    <section className={'w-full h-full overflow-hidden'}>
       {children}
     </section>
   );
