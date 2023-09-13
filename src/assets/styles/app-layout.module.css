@@ -1,0 +1,11 @@
+.app-content::after {
+  content: "";
+  position: absolute;
+  right: -20vh;
+  bottom: -20vh;
+  width: 120vh;
+  height: 120vh;
+  border-radius: 50%;
+  background: #999;
+  z-index: -1;
+}
