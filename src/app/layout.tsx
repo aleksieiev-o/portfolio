@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import {FC, PropsWithChildren, ReactElement} from 'react';
 import {createAppMetaData} from '@/utils/createAppMetaData';
 import AppThemeProvider from '@/components/providers/AppTheme.provider';
+import {AppThemeEnum} from '@/shared/types/appTheme.enum';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,9 +20,10 @@ const RootLayout: FC<PropsWithChildren> = ({children}): ReactElement => {
       <body className={inter.className}>
         <AppThemeProvider
           attribute={'class'}
-          defaultTheme={'system'}
-          disableTransitionOnChange={true}
-          enableSystem={true}>
+          defaultTheme={AppThemeEnum.SYSTEM}
+          storageKey={'oa-app-theme'}
+          disableTransitionOnChange
+          enableSystem>
           <div className={'app-wrapper'}>
             {children}
           </div>
