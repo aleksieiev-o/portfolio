@@ -11,7 +11,7 @@ const HomePage: FC = async (): Promise<ReactElement> => {
   const bio: IFile = await fetchBio();
 
   return (
-    <section>
+    <section className={'container mx-auto mx-auto'}>
       HomePage
     </section>
   );

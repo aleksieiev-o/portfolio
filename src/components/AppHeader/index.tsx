@@ -11,7 +11,7 @@ const AppHeader: FC = (): ReactElement => {
         OA
       </Link>
 
-      <div className={'h-20 grid grid-cols-2 gap-4 items-center pr-4'}>
+      <div className={'h-20 grid grid-cols-2 gap-8 items-center pr-8'}>
         <AppThemeToggle/>
 
         <AppLocaleToggle/>
