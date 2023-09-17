@@ -1,8 +1,8 @@
 import { RoutePath } from '@/router/Routes.enum';
 import Link from 'next/link';
 import React, {FC, ReactElement} from 'react';
-import AppThemeToggle from '@/components/ui/AppThemeToggle';
-import AppLocaleToggle from '@/components/ui/AppLocaleToggle';
+import AppThemeToggle from '@/components/ui/custom-ui/AppThemeToggle';
+import AppLocaleToggle from '@/components/ui/custom-ui/AppLocaleToggle';
 
 const AppHeader: FC = (): ReactElement => {
   return (
