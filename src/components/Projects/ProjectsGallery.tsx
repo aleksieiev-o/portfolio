@@ -11,26 +11,28 @@ interface Props {
 }
 
 const breakpointColumnsObj = {
-  default: 4,
+  default: 1,
+  7680: 7,
+  4096: 6,
+  2048: 5,
+  1920: 4,
   1280: 3,
   1024: 2,
-  640: 1
+  640: 1,
 };
 
 const ProjectsGallery: FC<Props> = (props): ReactElement => {
   const {projects} = props;
 
   return (
-    <div>
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className={'my-masonry-grid'}
-        columnClassName={'my-masonry-grid_column'}>
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project}/>
-        ))}
-      </Masonry>
-    </div>
+    <Masonry
+      breakpointCols={breakpointColumnsObj}
+      className={'my-masonry-grid'}
+      columnClassName={'my-masonry-grid_column'}>
+      {projects.map((project) => (
+        <ProjectCard key={project.id} project={project}/>
+      ))}
+    </Masonry>
   );
 };
 

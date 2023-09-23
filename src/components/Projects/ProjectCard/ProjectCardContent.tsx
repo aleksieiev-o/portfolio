@@ -17,8 +17,8 @@ const ProjectCardContent: FC<Props> = ({project}): ReactElement => {
       <Image
         src={fileSrc}
         alt={fileName}
-        width={600}
-        height={600}/>
+        width={1400}
+        height={788}/>
 
       <div className={'grid grid-cols-1 gap-4 px-4'}>
         <Accordion type="single" collapsible>
