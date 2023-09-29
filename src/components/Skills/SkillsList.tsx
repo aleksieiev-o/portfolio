@@ -1,6 +1,6 @@
 import React, {FC, ReactElement} from 'react';
 import {ISkill} from 'my-portfolio-types';
-import SkillProgress from '@/components/Skills/SkillProgress';
+import Skill from '@/components/Skills/Skill';
 
 interface Props {
   listTitle: string;
@@ -19,7 +19,7 @@ const SkillsList: FC<Props> = (props): ReactElement => {
       <div className={'grid grid-cols-1 gap-4'}>
         {
           skills.map((skill) => (
-            <SkillProgress key={skill.id} skill={skill}/>
+            <Skill key={skill.id} skill={skill}/>
           ))
         }
       </div>
