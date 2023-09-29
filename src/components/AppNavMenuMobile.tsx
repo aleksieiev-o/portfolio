@@ -9,9 +9,9 @@ import {
 import {Menu} from 'lucide-react';
 import {Button} from '@/components/ui/button';
 import {usePathname} from 'next/navigation';
-import NavMenu from '@/components/NavMenu';
+import AppNavMenu from '@/components/AppNavMenu';
 
-const AppDrawer: FC = (): ReactElement => {
+const AppNavMenuMobile: FC = (): ReactElement => {
   const [open, setOpen] = useState<boolean>(false);
   const pathname = usePathname();
 
@@ -29,11 +29,11 @@ const AppDrawer: FC = (): ReactElement => {
         </SheetTrigger>
 
         <SheetContent className="flex flex-col items-center justify-center w-auto p-0">
-          <NavMenu className={'w-20 items-center flex-col justify-center'}/>
+          <AppNavMenu className={'w-20 items-center flex-col justify-center'}/>
         </SheetContent>
       </Sheet>
     </span>
   );
 };
 
-export default AppDrawer;
+export default AppNavMenuMobile;

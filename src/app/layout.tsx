@@ -8,7 +8,7 @@ import {createAppMetaData} from '@/utils/createAppMetaData';
 import AppThemeProvider from '@/components/providers/AppTheme.provider';
 import {AppThemeEnum} from '@/shared/types/appTheme.enum';
 import AppHeader from '@/components/AppHeader';
-import NavMenu from '@/components/NavMenu';
+import AppNavMenu from '@/components/AppNavMenu';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -32,7 +32,7 @@ const RootLayout: FC<PropsWithChildren> = ({children}): ReactElement => {
               <AppHeader/>
 
               <div className={'w-full h-full flex flex-row items-center justify-start relative overflow-hidden'}>
-                <NavMenu className={'hidden md:flex w-20 items-center flex-col justify-center'}/>
+                <AppNavMenu className={'hidden md:flex w-20 items-center flex-col justify-center'}/>
 
                 {children}
               </div>

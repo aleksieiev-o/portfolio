@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {Rout} from '@/router/Router';
 import {Button} from '@/components/ui/button';
 
-const NavMenuItem: FC<PropsWithChildren<Rout>> = (props): ReactElement => {
+const AppNavMenuItem: FC<PropsWithChildren<Rout>> = (props): ReactElement => {
   const {href, name, children} = props;
 
   return (
@@ -18,4 +18,4 @@ const NavMenuItem: FC<PropsWithChildren<Rout>> = (props): ReactElement => {
   );
 };
 
-export default NavMenuItem;
+export default AppNavMenuItem;

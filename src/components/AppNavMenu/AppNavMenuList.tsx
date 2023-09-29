@@ -1,6 +1,6 @@
 import React, {FC, ReactElement} from 'react';
 import {Rout, router} from '@/router/Router';
-import NavMenuItem from '@/components/NavMenu/NavMenuItem';
+import AppNavMenuItem from '@/components/AppNavMenu/AppNavMenuItem';
 import {Contact, GalleryThumbnails, Home, Star, User} from 'lucide-react';
 import {Separator} from '@/components/ui/separator';
 
@@ -16,7 +16,7 @@ const navMenuListIcons: Array<{icon: ReactElement}> = [
   {icon: <Contact />},
 ];
 
-const navMenuList: Array<INavMenuItem> = router.map((rout, idx): INavMenuItem => {
+const appNavMenuList: Array<INavMenuItem> = router.map((rout, idx): INavMenuItem => {
   return {...rout, IconComponent: navMenuListIcons[idx].icon};
 });
 
@@ -24,13 +24,13 @@ const NavMenuList: FC = (): ReactElement => {
   return (
     <ul className={'w-full overflow-hidden'}>
       {
-        navMenuList.map((rout, idx, arr) => (
+        appNavMenuList.map((rout, idx, arr) => (
           <li className={'w-20 h-20 flex flex-col'} key={rout.href}>
-            <NavMenuItem
+            <AppNavMenuItem
               href={rout.href}
               name={rout.name}>
               {rout.IconComponent}
-            </NavMenuItem>
+            </AppNavMenuItem>
 
             {
               idx !== arr.length - 1 && <Separator/>

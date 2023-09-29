@@ -1,11 +1,11 @@
 import React, {FC, ReactElement} from 'react';
-import NavMenuList from '@/components/NavMenu/NavMenuList';
+import NavMenuList from '@/components/AppNavMenu/AppNavMenuList';
 
 interface Props {
   className: string;
 }
 
-const NavMenu: FC<Props> = (props): ReactElement => {
+const AppNavMenu: FC<Props> = (props): ReactElement => {
   const {className} = props;
 
   return (
@@ -15,4 +15,4 @@ const NavMenu: FC<Props> = (props): ReactElement => {
   );
 };
 
-export default NavMenu;
+export default AppNavMenu;

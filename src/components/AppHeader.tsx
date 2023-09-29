@@ -1,9 +1,9 @@
 import { RoutePath } from '@/router/Routes.enum';
 import Link from 'next/link';
 import React, {FC, ReactElement} from 'react';
-import AppThemeToggle from '@/components/ui/custom-ui/AppThemeToggle';
-import AppLocaleToggle from '@/components/ui/custom-ui/AppLocaleToggle';
-import AppDrawer from '@/components/ui/custom-ui/AppDrawer';
+import AppThemeChange from '@/components/ui/custom-ui/AppThemeChange';
+import AppLocaleChange from '@/components/ui/custom-ui/AppLocaleChange';
+import AppNavMenuMobile from '@/components/AppNavMenuMobile';
 
 const AppHeader: FC = (): ReactElement => {
   return (
@@ -13,11 +13,11 @@ const AppHeader: FC = (): ReactElement => {
       </Link>
 
       <div className={'h-20 grid grid-flow-col auto-cols-max gap-6 md:gap-8 items-center pr-8'}>
-        <AppThemeToggle/>
+        <AppThemeChange/>
 
-        <AppLocaleToggle/>
+        <AppLocaleChange/>
 
-        <AppDrawer/>
+        <AppNavMenuMobile/>
       </div>
     </header>
   );

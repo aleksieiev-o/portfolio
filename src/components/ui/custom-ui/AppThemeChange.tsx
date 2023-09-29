@@ -8,7 +8,7 @@ import {Moon, Sun} from 'lucide-react';
 import {DropdownMenuContent, DropdownMenuItem} from '@/components/ui/dropdown-menu';
 import {AppThemeEnum} from '@/shared/types/appTheme.enum';
 
-const AppThemeToggle: FC = (): ReactElement => {
+const AppThemeChange: FC = (): ReactElement => {
   const { setTheme } = useTheme();
 
   return (
@@ -42,4 +42,4 @@ const AppThemeToggle: FC = (): ReactElement => {
   );
 };
 
-export default AppThemeToggle;
+export default AppThemeChange;
