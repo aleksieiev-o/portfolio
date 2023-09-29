@@ -32,7 +32,7 @@ const RootLayout: FC<PropsWithChildren> = ({children}): ReactElement => {
               <AppHeader/>
 
               <div className={'w-full h-full flex flex-row items-center justify-start relative overflow-hidden'}>
-                <NavMenu/>
+                <NavMenu className={'hidden md:flex w-20 items-center flex-col justify-center'}/>
 
                 {children}
               </div>

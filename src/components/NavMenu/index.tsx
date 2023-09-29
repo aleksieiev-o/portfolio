@@ -1,9 +1,15 @@
 import React, {FC, ReactElement} from 'react';
 import NavMenuList from '@/components/NavMenu/NavMenuList';
 
-const NavMenu: FC = (): ReactElement => {
+interface Props {
+  className: string;
+}
+
+const NavMenu: FC<Props> = (props): ReactElement => {
+  const {className} = props;
+
   return (
-    <nav className={'hidden md:flex w-20 items-center flex-col justify-center'}>
+    <nav className={className}>
       <NavMenuList/>
     </nav>
   );
