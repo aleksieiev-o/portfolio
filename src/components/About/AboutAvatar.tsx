@@ -2,18 +2,20 @@
 
 import React, {FC, ReactElement} from 'react';
 import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar';
-import {IFile, IPersonalInfo} from 'my-portfolio-types';
+import {IFile, IPersonalInfo, ISocial} from 'my-portfolio-types';
+import AboutSocialsList from '@/components/About/AboutSocialsList';
 
 interface Props {
   file: IFile;
   personalInfo: IPersonalInfo;
+  socials: Array<ISocial>;
 }
 
 const AboutAvatar: FC<Props> = (props): ReactElement => {
-  const {file, personalInfo} = props;
+  const {file, personalInfo, socials} = props;
 
   return (
-    <div className={'p-2 grid grid-cols-1 content-center justify-items-center gap-4 md:gap-8'}>
+    <div className={'p-2 grid grid-cols-1 content-center justify-items-center gap-4 xl:gap-6'}>
       <Avatar>
         <AvatarImage src={file.fileSrc} alt={file.fileName}/>
 
@@ -29,6 +31,8 @@ const AboutAvatar: FC<Props> = (props): ReactElement => {
           {personalInfo.firstName} {personalInfo.lastName}
         </strong>
       </div>
+
+      <AboutSocialsList socials={socials}/>
     </div>
   );
 };
