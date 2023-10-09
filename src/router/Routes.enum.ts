@@ -8,8 +8,8 @@ export enum RoutePath {
 
 export enum RouteName {
   HOME = 'Home',
-  ABOUT = 'About',
-  PROJECTS = 'Projects',
-  SKILLS = 'Skills',
+  ABOUT = 'About me',
+  PROJECTS = 'My projects',
+  SKILLS = 'My skills',
   CONTACTS = 'Contacts',
 }

@@ -12,7 +12,7 @@ const ProjectsPage: FC = async (): Promise<ReactElement> => {
   const projectsList = projects.filter((project) => project.visibility);
 
   return (
-    <section className={'w-full h-full grid grid-cols-1 gap-4 content-start overflow-hidden pt-6'}>
+    <section className={'w-full h-full grid grid-cols-1 gap-4 content-start overflow-hidden'}>
       <PageTitle title={'My projects'}/>
 
       <ScrollContentWrapper>

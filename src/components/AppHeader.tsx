@@ -12,7 +12,7 @@ const AppHeader: FC = (): ReactElement => {
         OA
       </Link>
 
-      <div className={'h-20 grid grid-flow-col auto-cols-max gap-6 md:gap-8 items-center pr-8'}>
+      <div className={'h-20 grid grid-flow-col auto-cols-max gap-4 md:gap-8 items-center pr-8'}>
         <AppThemeChange/>
 
         <AppLocaleChange/>

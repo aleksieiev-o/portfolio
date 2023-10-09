@@ -14,7 +14,7 @@ const SkillsPage: FC = async (): Promise<ReactElement> => {
   const secondarySkills = skillsList.filter((skill) => !skill.isMain);
 
   return (
-    <section className={'w-full h-full grid grid-cols-1 gap-4 content-start overflow-hidden pt-6'}>
+    <section className={'w-full h-full grid grid-cols-1 gap-4 content-start overflow-hidden'}>
       <PageTitle title={'My skills'}/>
 
       <ScrollContentWrapper>
