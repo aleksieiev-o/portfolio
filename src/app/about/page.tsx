@@ -14,7 +14,7 @@ const AboutPage: FC = async (): Promise<ReactElement> => {
   const personalInfo: IPersonalInfo = await fetchPersonalInfo();
   const socials: Array<ISocial> = await fetchSocialsList();
   const mainImage: IFile = await fetchMainImage();
-  const socialsList = socials.filter((social) => social.visibility);
+  const socialsList = socials.sort((a, b) => a.position - b.position).filter((social) => social.visibility);
 
   return (
     <section className={'w-full h-full grid grid-cols-1 gap-4 content-start overflow-hidden'}>
@@ -24,7 +24,7 @@ const AboutPage: FC = async (): Promise<ReactElement> => {
         <div className={'grid grid-cols-1 md:grid-cols-2 content-center justify-items-center gap-4'}>
           <AboutAvatar file={mainImage} personalInfo={personalInfo} socials={socialsList}/>
 
-          <AboutInfo personalInfo={personalInfo} socialsList={socialsList}/>
+          <AboutInfo personalInfo={personalInfo}/>
         </div>
       </ScrollContentWrapper>
     </section>

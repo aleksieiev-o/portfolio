@@ -16,7 +16,6 @@ const AboutSocialsList: FC<Props> = (props): ReactElement => {
 
   const formattedSocials = socials
     .filter((social) => social.title !== 'Email')
-    .sort((a, b) => a.position - b.position)
     .map((social) => {
       const splitTitle = social.title.slice(0, 3);
       return {

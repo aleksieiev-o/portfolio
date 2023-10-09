@@ -1,13 +1,12 @@
 import React, {FC, ReactElement} from 'react';
-import {IPersonalInfo, ISocial} from 'my-portfolio-types';
+import {IPersonalInfo} from 'my-portfolio-types';
 
 interface Props {
   personalInfo: IPersonalInfo;
-  socialsList: Array<ISocial>;
 }
 
 const AboutInfo: FC<Props> = (props): ReactElement => {
-  const {personalInfo, socialsList} = props;
+  const {personalInfo} = props;
   const {firstName, lastName, email, biography, birthDate, town, country} = personalInfo;
 
   const getBirthDay = (date: Date): string => {
