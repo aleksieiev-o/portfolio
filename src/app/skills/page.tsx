@@ -18,7 +18,7 @@ const SkillsPage: FC = async (): Promise<ReactElement> => {
       <PageTitle title={'My skills'}/>
 
       <ScrollContentWrapper>
-        <div className={'grid grid-cols-1 md:grid-cols-2 gap-4'}>
+        <div className={'grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12'}>
           <SkillsList skills={mainSkills} listTitle={'Main skills'}/>
 
           <SkillsList skills={secondarySkills} listTitle={'Secondary skills'}/>

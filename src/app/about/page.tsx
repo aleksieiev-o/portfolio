@@ -21,7 +21,7 @@ const AboutPage: FC = async (): Promise<ReactElement> => {
       <PageTitle title={'About me'}/>
 
       <ScrollContentWrapper>
-        <div className={'grid grid-cols-1 md:grid-cols-2 content-center justify-items-center gap-4'}>
+        <div className={'grid grid-cols-1 md:grid-cols-2 content-center justify-items-center gap-6 md:gap-12'}>
           <AboutAvatar file={mainImage} personalInfo={personalInfo} socials={socialsList}/>
 
           <AboutInfo personalInfo={personalInfo}/>
