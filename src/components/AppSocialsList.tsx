@@ -11,7 +11,7 @@ interface Props {
 
 const icons = [FaGithub, FaInstagram, FaLinkedinIn, FaTelegram, FaBehance];
 
-const AboutSocialsList: FC<Props> = (props): ReactElement => {
+const AppSocialsList: FC<Props> = (props): ReactElement => {
   const {socials} = props;
 
   const formattedSocials = socials
@@ -45,4 +45,4 @@ const AboutSocialsList: FC<Props> = (props): ReactElement => {
   );
 };
 
-export default AboutSocialsList;
+export default AppSocialsList;

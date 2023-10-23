@@ -3,7 +3,7 @@
 import React, {FC, ReactElement} from 'react';
 import {Avatar, AvatarFallback, AvatarImage} from '@/components/ui/avatar';
 import {IFile, IPersonalInfo, ISocial} from 'my-portfolio-types';
-import AboutSocialsList from '@/components/About/AboutSocialsList';
+import AppSocialsList from '@/components/AppSocialsList';
 
 interface Props {
   file: IFile;
@@ -32,7 +32,7 @@ const AboutAvatar: FC<Props> = (props): ReactElement => {
         </strong>
       </div>
 
-      <AboutSocialsList socials={socials}/>
+      <AppSocialsList socials={socials}/>
     </div>
   );
 };

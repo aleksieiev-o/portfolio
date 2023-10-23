@@ -74,7 +74,7 @@ const AboutInfo: FC<Props> = (props): ReactElement => {
 
             <li className={'flex flex-nowrap'}>
               <label className={'font-bold mr-4'}>Email: </label>
-              <span className={'whitespace-nowrap text-ellipsis overflow-hidden'}>{email}</span>
+              <a href={`mailto:${email}`} className={'whitespace-nowrap text-ellipsis overflow-hidden'}>{email}</a>
             </li>
           </ul>
         </div>
