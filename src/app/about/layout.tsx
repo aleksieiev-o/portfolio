@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import {FC, PropsWithChildren, ReactElement} from 'react';
 import {createAppMetaData} from '@/utils/createAppMetaData';
+import AppContentWrapper from '@/components/AppContentWrapper';
 
 export const metadata: Metadata = createAppMetaData({
   title: 'About',
@@ -10,7 +11,9 @@ export const metadata: Metadata = createAppMetaData({
 const AboutLayout: FC<PropsWithChildren> = ({children}): ReactElement => {
   return (
     <section className={'w-full h-full overflow-hidden'}>
-      {children}
+      <AppContentWrapper>
+        {children}
+      </AppContentWrapper>
     </section>
   );
 };

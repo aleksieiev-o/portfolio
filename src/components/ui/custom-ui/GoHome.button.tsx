@@ -9,7 +9,7 @@ const GoHomeButton: FC = (): ReactElement => {
   const router = useRouter();
 
   return (
-    <Button onClick={() => router.replace(RoutePath.HOME)} variant={'ghost'}>
+    <Button onClick={() => router.replace(RoutePath.HOME)}>
       Go home
     </Button>
   );
