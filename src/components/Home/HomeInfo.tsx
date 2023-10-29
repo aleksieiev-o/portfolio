@@ -22,7 +22,7 @@ const HomeInfo: FC<Props> = (props): ReactElement => {
         </h2>
       </div>
 
-      <p className={'text-4xl sm:text-6xl font-bold'}>Frontend Developer</p>
+      <p className={'text-4xl sm:text-6xl font-bold'}>Front-end developer</p>
 
       <div className={'grid grid-cols-1 content-center justify-items-start gap-8 xl:gap-16'}>
         <p className={'text-xl sm:text-2xl'}>
