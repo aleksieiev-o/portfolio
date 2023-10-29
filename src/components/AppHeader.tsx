@@ -3,7 +3,6 @@ import Link from 'next/link';
 import React, {FC, ReactElement} from 'react';
 import AppThemeChange from '@/components/ui/custom-ui/AppThemeChange';
 import AppLocaleChange from '@/components/ui/custom-ui/AppLocaleChange';
-import AppNavMenuMobile from '@/components/AppNavMenuMobile';
 
 const AppHeader: FC = (): ReactElement => {
   return (
@@ -17,7 +16,7 @@ const AppHeader: FC = (): ReactElement => {
 
         <AppLocaleChange/>
 
-        <AppNavMenuMobile/>
+        {/*<AppNavMenuMobile/>*/}
       </div>
     </header>
   );

@@ -22,10 +22,10 @@ const appNavMenuList: Array<INavMenuItem> = router.map((rout, idx): INavMenuItem
 
 const NavMenuList: FC = (): ReactElement => {
   return (
-    <ul className={'w-full overflow-hidden'}>
+    <ul className={'w-full flex flex-row md:flex-col overflow-hidden'}>
       {
         appNavMenuList.map((rout, idx, arr) => (
-          <li className={'w-20 h-20 flex flex-col'} key={rout.href}>
+          <li className={'w-full md:w-20 h-16 md:h-20 flex flex-row md:flex-col'} key={rout.href}>
             <AppNavMenuItem
               href={rout.href}
               name={rout.name}>
@@ -33,7 +33,11 @@ const NavMenuList: FC = (): ReactElement => {
             </AppNavMenuItem>
 
             {
-              idx !== arr.length - 1 && <Separator/>
+              idx !== arr.length - 1 && <Separator className={'hidden md:block'}/>
+            }
+
+            {
+              idx !== arr.length - 1 && <Separator orientation={'vertical'} className={'block md:hidden'}/>
             }
           </li>
         ))

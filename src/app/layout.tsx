@@ -32,8 +32,8 @@ const RootLayout: FC<PropsWithChildren> = ({children}): ReactElement => {
             <div className={'app-content w-full h-full flex flex-col items-start justify-start'}>
               <AppHeader/>
 
-              <div className={'w-full h-full flex flex-row items-center justify-start relative overflow-hidden'}>
-                <AppNavMenu className={'hidden md:flex w-20 items-center flex-col justify-center'}/>
+              <div className={'w-full h-full flex flex-col md:flex-row items-center justify-start relative overflow-hidden'}>
+                <AppNavMenu className={'flex w-full md:w-20 items-center flex-col justify-center order-last md:order-first border-t-[1px] md:border-none'}/>
 
                 {children}
               </div>
