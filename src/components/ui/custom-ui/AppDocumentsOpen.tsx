@@ -31,7 +31,7 @@ const AppDocumentsOpen: FC<Props> = (props): ReactElement => {
           className={'shadow-md'}
           title={'Download Resume'}>
           <p className={'mr-4'}>
-            Open document
+            My documents
           </p>
 
           {isOpen ? <ChevronUp/> : <ChevronDown/>}
