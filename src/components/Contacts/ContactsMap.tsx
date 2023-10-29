@@ -11,7 +11,12 @@ const ContactsMap: FC<Props> = (props): ReactElement => {
   const {personalInfo} = props;
 
   return (
-    <div>ContactsMap</div>
+    <div className={'grid grid-cols-1 w-full'}>
+      <iframe
+        src={''}
+        title={'My location'}
+        className={'w-full'}/>
+    </div>
   );
 };
 

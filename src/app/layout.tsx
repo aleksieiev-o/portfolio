@@ -9,6 +9,7 @@ import AppThemeProvider from '@/components/providers/AppTheme.provider';
 import {AppThemeEnum} from '@/shared/types/appTheme.enum';
 import AppHeader from '@/components/AppHeader';
 import AppNavMenu from '@/components/AppNavMenu';
+import {Toaster} from '@/components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -36,6 +37,8 @@ const RootLayout: FC<PropsWithChildren> = ({children}): ReactElement => {
 
                 {children}
               </div>
+
+              <Toaster/>
             </div>
           </div>
         </AppThemeProvider>

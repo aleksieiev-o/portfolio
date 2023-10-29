@@ -9,6 +9,7 @@ import {useForm} from 'react-hook-form';
 import {ZodString} from 'zod/lib/types';
 import {Form} from '@/components/ui/form';
 import ContactsFormField from '@/components/Contacts/ContactsFormField';
+import {useToast} from '@/components/ui/use-toast';
 
 export interface RawShape extends ZodRawShape {
   firstName: ZodString;
@@ -19,6 +20,8 @@ export interface RawShape extends ZodRawShape {
 }
 
 const ContactsForm: FC = (): ReactElement => {
+  const { toast } = useToast();
+
   const shape = useMemo<RawShape>(() => ({
     firstName: string({ required_error: 'Field is required', invalid_type_error: 'Value must be a string' })
       .trim()
@@ -57,8 +60,13 @@ const ContactsForm: FC = (): ReactElement => {
   });
 
   const handleSubmitForm = (values: z.infer<typeof formSchema>) => {
-    // eslint-disable-next-line no-console
-    console.log(111, values);
+    console.warn('Contacts form values', values);
+
+    toast({
+      title: 'Sorry. The form is not working yet',
+      description: 'To contact me, please use the buttons in the information section or email.',
+    });
+
     formModel.reset();
   };
 
@@ -70,7 +78,7 @@ const ContactsForm: FC = (): ReactElement => {
 
       <Form {...formModel}>
         <form onSubmit={formModel.handleSubmit(handleSubmitForm)} className={'grid grid-cols-1 gap-4 md:gap-8 w-full'}>
-          <div className={'grid grid-cols-2 gap-4 md:gap-8 w-full'}>
+          <div className={'grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 w-full'}>
             <ContactsFormField
               mode={'input'}
               formModel={formModel}
@@ -88,7 +96,7 @@ const ContactsForm: FC = (): ReactElement => {
               required={true}/>
           </div>
 
-          <div className={'grid grid-cols-2 gap-4 md:gap-8 w-full'}>
+          <div className={'grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 w-full'}>
             <ContactsFormField
               mode={'input'}
               formModel={formModel}
@@ -102,7 +110,7 @@ const ContactsForm: FC = (): ReactElement => {
               formModel={formModel}
               name={'email'}
               label={'E-mail'}
-              placeholder={'Enter your e-mail'}
+              placeholder={'Enter your email'}
               required={true}/>
           </div>
 
@@ -117,8 +125,8 @@ const ContactsForm: FC = (): ReactElement => {
           </div>
 
           <div className={'grid grid-cols-2 gap-4 md:gap-8 w-full'}>
-            <Button type={'submit'} variant={'default'} disabled={true}>
-              <p className={'mr-4'}>Send message</p>
+            <Button type={'submit'} variant={'default'} title={'Send a message'}>
+              <p className={'mr-4'}>Send</p>
 
               <SendHorizontal className={'w-4 h-4'}/>
             </Button>
