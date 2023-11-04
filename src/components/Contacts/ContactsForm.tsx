@@ -6,6 +6,7 @@ import {SendHorizontal} from 'lucide-react';
 import {object, string, z, ZodRawShape} from 'zod';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
+// @ts-ignore
 import {ZodString} from 'zod/lib/types';
 import {Form} from '@/components/ui/form';
 import ContactsFormField from '@/components/Contacts/ContactsFormField';

@@ -10,8 +10,12 @@ export const revalidate = 5;
 const SkillsPage: FC = async (): Promise<ReactElement> => {
   const skills: Array<ISkill> = await fetchAllSkills();
   const skillsList = skills.filter((skill) => skill.visibility);
-  const mainSkills = skillsList.sort((a, b) => a.position - b.position).filter((skill) => skill.isMain);
-  const secondarySkills = skillsList.sort((a, b) => a.position - b.position).filter((skill) => !skill.isMain);
+  const mainSkills = skillsList
+    .sort((a, b) => parseInt(a.position, 10) - parseInt(b.position, 10))
+    .filter((skill) => skill.isMain);
+  const secondarySkills = skillsList
+    .sort((a, b) => parseInt(a.position, 10) - parseInt(b.position, 10))
+    .filter((skill) => !skill.isMain);
 
   return (
     <section className={'w-full h-full grid grid-cols-1 gap-4 content-start overflow-hidden'}>

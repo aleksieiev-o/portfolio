@@ -9,7 +9,9 @@ export const revalidate = 5;
 
 const ProjectsPage: FC = async (): Promise<ReactElement> => {
   const projects: Array<IProject> = await fetchAllProjects();
-  const projectsList = projects.sort((a, b) => a.position - b.position).filter((project) => project.visibility);
+  const projectsList = projects
+    .sort((a, b) => parseInt(a.position, 10) - parseInt(b.position, 10))
+    .filter((project) => project.visibility);
 
   return (
     <section className={'w-full h-full grid grid-cols-1 gap-4 content-start overflow-hidden'}>

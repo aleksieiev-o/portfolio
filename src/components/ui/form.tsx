@@ -13,6 +13,7 @@ import {
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
 
+/* tslint:disable */
 /* eslint-disable */
 const Form = FormProvider;
 

@@ -13,6 +13,7 @@ const SheetTrigger = SheetPrimitive.Trigger;
 
 const SheetClose = SheetPrimitive.Close;
 
+/* tslint:disable */
 /* eslint-disable */
 const SheetPortal = ({
   className,

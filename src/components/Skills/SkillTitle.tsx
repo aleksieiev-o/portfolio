@@ -21,7 +21,7 @@ const SkillTitle: FC<Props> = ({skill}): ReactElement => {
           redraw={true}>
           {({ countUpRef }) => (
             <VisibilitySensor
-              onChange={(isVisible) => {
+              onChange={(isVisible: boolean) => {
                 if (isVisible) {
                   setFocus(true);
                 }

@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/toast';
 import { useToast } from '@/components/ui/use-toast';
 
+/* tslint:disable */
 /* eslint-disable */
 export function Toaster() {
   const { toasts } = useToast();

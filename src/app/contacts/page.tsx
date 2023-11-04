@@ -12,7 +12,9 @@ export const revalidate = 5;
 const ContactsPage: FC = async (): Promise<ReactElement> => {
   const personalInfo: IPersonalInfo = await fetchPersonalInfo();
   const socials: Array<ISocial> = await fetchSocialsList();
-  const socialsList = socials.sort((a, b) => a.position - b.position).filter((social) => social.visibility);
+  const socialsList = socials
+    .sort((a, b) => parseInt(a.position, 10) - parseInt(b.position, 10))
+    .filter((social) => social.visibility);
 
   return (
     <section className={'w-full h-full grid grid-cols-1 gap-4 content-start overflow-hidden'}>
