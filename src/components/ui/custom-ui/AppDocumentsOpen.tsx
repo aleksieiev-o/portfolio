@@ -29,7 +29,7 @@ const AppDocumentsOpen: FC<Props> = (props): ReactElement => {
         <Button
           variant={'default'}
           className={'shadow-md'}
-          title={'Download Resume'}>
+          title={'Documents list menu'}>
           <p className={'mr-4'}>
             My documents
           </p>
