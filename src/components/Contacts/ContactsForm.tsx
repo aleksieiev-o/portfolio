@@ -35,11 +35,12 @@ const ContactsForm: FC = (): ReactElement => {
     email: string({ required_error: 'Field is required', invalid_type_error: 'Value must be a string' })
       .trim()
       .email({ message: 'Invalid email address' })
-      .min(2, { message: 'Must be 2 or more characters long' }),
+      .min(6, { message: 'Must be 6 or more characters long' })
+      .max(254, { message: 'Must be 254 or fewer characters long' }),
     subject: string({ required_error: 'Field is required', invalid_type_error: 'Value must be a string' })
       .trim()
-      .min(2, { message: 'Must be 2 or more characters long' })
-      .max(200, { message: 'Must be 200 or fewer characters long' }),
+      .min(6, { message: 'Must be 6 or more characters long' })
+      .max(254, { message: 'Must be 254 or fewer characters long' }),
     message: string({ required_error: 'Field is required', invalid_type_error: 'Value must be a string' })
       .trim()
       .min(10, { message: 'Must be 10 or more characters long' }),
@@ -63,6 +64,7 @@ const ContactsForm: FC = (): ReactElement => {
   const handleSubmitForm = (values: z.infer<typeof formSchema>) => {
     console.warn('Contacts form values', values);
 
+    // TODO add form handler
     toast({
       title: 'Sorry. The form is not working yet',
       description: 'To contact me, please use the buttons in the information section or email.',

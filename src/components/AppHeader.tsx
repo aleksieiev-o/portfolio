@@ -2,7 +2,6 @@ import { RoutePath } from '@/router/Routes.enum';
 import Link from 'next/link';
 import React, {FC, ReactElement} from 'react';
 import AppThemeChange from '@/components/ui/custom-ui/AppThemeChange';
-import AppLocaleChange from '@/components/ui/custom-ui/AppLocaleChange';
 
 const AppHeader: FC = (): ReactElement => {
   return (
@@ -14,7 +13,8 @@ const AppHeader: FC = (): ReactElement => {
       <div className={'h-20 grid grid-flow-col auto-cols-max gap-4 md:gap-8 items-center pr-4 md:pr-8'}>
         <AppThemeChange/>
 
-        <AppLocaleChange/>
+        {/* TODO add localization */}
+        {/*<AppLocaleChange/>*/}
 
         {/*<AppNavMenuMobile/>*/}
       </div>
