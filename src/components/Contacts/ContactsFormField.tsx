@@ -35,11 +35,13 @@ const ContactsFormField: FC<Props> = (props): ReactElement => {
               <Input
                 placeholder={placeholder}
                 aria-required={required}
+                className={'shadow-md'}
                 {...field}/>
               :
               <Textarea
                 placeholder={placeholder}
                 aria-required={required}
+                className={'shadow-md'}
                 {...field}/>
             }
           </FormControl>

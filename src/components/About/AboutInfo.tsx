@@ -1,12 +1,14 @@
 import React, {FC, ReactElement} from 'react';
-import {IPersonalInfo} from 'my-portfolio-types';
+import {IDocument, IPersonalInfo} from 'my-portfolio-types';
+import AppDocumentsOpen from '@/components/ui/custom-ui/AppDocumentsOpen';
 
 interface Props {
   personalInfo: IPersonalInfo;
+  documents: Array<IDocument>;
 }
 
 const AboutInfo: FC<Props> = (props): ReactElement => {
-  const {personalInfo} = props;
+  const {personalInfo, documents} = props;
   const {firstName, lastName, email, biography, birthDate, town, country} = personalInfo;
 
   const getBirthDay = (date: Date): string => {
@@ -38,6 +40,12 @@ const AboutInfo: FC<Props> = (props): ReactElement => {
             {biography}
           </p>
         </div>
+      </div>
+
+      <div className={'grid grid-cols-1 content-start justify-items-start gap-4 w-full'}>
+        <h6 className={'text-xl font-bold'}>My documents</h6>
+
+        <AppDocumentsOpen documents={documents}/>
       </div>
 
       <div className={'grid grid-cols-1 content-start justify-items-start gap-4 w-full'}>

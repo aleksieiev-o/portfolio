@@ -29,7 +29,11 @@ const HomeInfo: FC<Props> = (props): ReactElement => {
           {personalInfo.aboutMe}
         </p>
 
-        <AppDocumentsOpen documents={documents}/>
+        <div className={'grid grid-cols-1 content-center justify-items-start gap-3 xl:gap-6'}>
+          <p className={'text-lg sm:text-xl'}>Here is a list of documents you can review</p>
+
+          <AppDocumentsOpen documents={documents}/>
+        </div>
       </div>
     </div>
   );

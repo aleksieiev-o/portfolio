@@ -1,17 +1,19 @@
 'use client';
 
 import React, {FC, ReactElement} from 'react';
-import {IPersonalInfo, ISocial} from 'my-portfolio-types';
+import {IDocument, IPersonalInfo, ISocial} from 'my-portfolio-types';
 import {Mail, MapPin} from 'lucide-react';
 import AppSocialsList from '@/components/AppSocialsList';
+import AppDocumentsOpen from '@/components/ui/custom-ui/AppDocumentsOpen';
 
 interface Props {
   personalInfo: IPersonalInfo;
   socials: Array<ISocial>;
+  documents: Array<IDocument>;
 }
 
 const ContactsInfo: FC<Props> = (props): ReactElement => {
-  const {personalInfo, socials} = props;
+  const {personalInfo, socials, documents} = props;
 
   return (
     <div className={'grid grid-cols-1 content-start justify-items-start gap-4 md:gap-8 w-full'}>
@@ -33,7 +35,10 @@ const ContactsInfo: FC<Props> = (props): ReactElement => {
         <div className={'flex items-start justify-start flex-nowrap gap-4'}>
           <MapPin/>
 
-          <p className={'text-md'}>{personalInfo.country}, {personalInfo.town}</p>
+          {/* TODO add map link to admin site */}
+          <a href={'https://maps.app.goo.gl/9MZgWWPt1Q5YFcMV9'} target={'_blank'} className={'text-md'}>
+            {personalInfo.country}, {personalInfo.town}
+          </a>
         </div>
 
         <div className={'flex items-start justify-start flex-nowrap gap-4'}>
@@ -44,6 +49,12 @@ const ContactsInfo: FC<Props> = (props): ReactElement => {
       </div>
 
       <AppSocialsList socials={socials}/>
+
+      <div className={'grid grid-cols-1 content-center justify-items-start gap-2 xl:gap-4'}>
+        <p className={'text-md'}>Here is a list of documents you can review</p>
+
+        <AppDocumentsOpen documents={documents}/>
+      </div>
     </div>
   );
 };

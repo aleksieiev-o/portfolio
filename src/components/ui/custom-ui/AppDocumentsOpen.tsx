@@ -27,11 +27,11 @@ const AppDocumentsOpen: FC<Props> = (props): ReactElement => {
     <DropdownMenu onOpenChange={handleDropdown}>
       <DropdownMenuTrigger asChild>
         <Button
-          variant={'default'}
+          variant={'outline'}
           className={'shadow-md'}
           title={'Documents list menu'}>
           <p className={'mr-4'}>
-            My documents
+            Download
           </p>
 
           {isOpen ? <ChevronUp/> : <ChevronDown/>}

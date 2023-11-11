@@ -74,7 +74,7 @@ const ContactsForm: FC = (): ReactElement => {
   };
 
   return (
-    <div className={'grid grid-cols-1 gap-4 md:gap-8 w-full'}>
+    <div className={'grid grid-cols-1 gap-4 md:gap-8 w-full pb-4'}>
       <h4 className={'font-bold text-xl'}>
         Send me a message
       </h4>
@@ -128,7 +128,7 @@ const ContactsForm: FC = (): ReactElement => {
           </div>
 
           <div className={'grid grid-cols-2 gap-4 md:gap-8 w-full'}>
-            <Button type={'submit'} variant={'default'} title={'Send a message'}>
+            <Button type={'submit'} variant={'outline'} title={'Send a message'} className={'shadow-md'}>
               <p className={'mr-4'}>Send</p>
 
               <SendHorizontal className={'w-4 h-4'}/>
