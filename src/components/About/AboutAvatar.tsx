@@ -15,7 +15,7 @@ const AboutAvatar: FC<Props> = (props): ReactElement => {
   const {file, personalInfo, socials} = props;
 
   return (
-    <div className={'p-2 grid grid-cols-1 content-center justify-items-center gap-4 xl:gap-6'}>
+    <div className={'p-2 grid grid-cols-1 content-start justify-items-center gap-4 xl:gap-6'}>
       <Avatar>
         <AvatarImage src={file.fileSrc} alt={file.fileName}/>
 
