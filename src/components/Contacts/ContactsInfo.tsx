@@ -2,9 +2,10 @@
 
 import React, {FC, ReactElement} from 'react';
 import {IDocument, IPersonalInfo, ISocial} from 'my-portfolio-types';
-import {Mail, MapPin} from 'lucide-react';
+import {Copy, Mail, MapPin} from 'lucide-react';
 import AppSocialsList from '@/components/AppSocialsList';
 import AppDocumentsOpen from '@/components/ui/custom-ui/AppDocumentsOpen';
+import AppCopyToClipboardButton from '@/components/ui/custom-ui/AppCopyToClipboard';
 
 interface Props {
   personalInfo: IPersonalInfo;
@@ -31,20 +32,34 @@ const ContactsInfo: FC<Props> = (props): ReactElement => {
         </p>
       </div>
 
-      <div className={'grid grid-cols-1 gap-4 md:gap-8'}>
-        <div className={'flex items-start justify-start flex-nowrap gap-4'}>
-          <MapPin/>
+      <div className={'grid grid-cols-1'}>
+        <div className={'grid grid-cols-1 gap-4 md:gap-8'}>
+          <div className={'flex items-start justify-start flex-nowrap gap-4 w-full'}>
+            <MapPin/>
 
-          {/* TODO add map link to admin site */}
-          <a href={'https://maps.app.goo.gl/9MZgWWPt1Q5YFcMV9'} target={'_blank'} className={'text-md'}>
-            {personalInfo.country}, {personalInfo.town}
-          </a>
-        </div>
+            {/* TODO add map link to admin site */}
+            <a href={'https://maps.app.goo.gl/9MZgWWPt1Q5YFcMV9'} target={'_blank'} className={'text-md'}>
+              {personalInfo.country}, {personalInfo.town}
+            </a>
 
-        <div className={'flex items-start justify-start flex-nowrap gap-4'}>
-          <Mail/>
+            <AppCopyToClipboardButton
+              copiedValue={'https://maps.app.goo.gl/9MZgWWPt1Q5YFcMV9'}
+              toastSuccessMessage={'Address link has been copied'}
+              toastErrorMessage={'Address link has not been copied'}
+              className={'ml-auto'}/>
+          </div>
 
-          <a href={`mailto:${personalInfo.email}`} className={'text-md'}>{personalInfo.email}</a>
+          <div className={'flex items-center justify-start flex-nowrap gap-4 w-full'}>
+            <Mail/>
+
+            <a href={`mailto:${personalInfo.email}`} className={'text-md'}>{personalInfo.email}</a>
+
+            <AppCopyToClipboardButton
+              copiedValue={personalInfo.email}
+              toastSuccessMessage={'Email has been copied'}
+              toastErrorMessage={'Email has not been copied'}
+              className={'ml-auto'}/>
+          </div>
         </div>
       </div>
 
