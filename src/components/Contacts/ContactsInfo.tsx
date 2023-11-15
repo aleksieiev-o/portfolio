@@ -2,7 +2,7 @@
 
 import React, {FC, ReactElement} from 'react';
 import {IDocument, IPersonalInfo, ISocial} from 'my-portfolio-types';
-import {Copy, Mail, MapPin} from 'lucide-react';
+import {Mail, MapPin} from 'lucide-react';
 import AppSocialsList from '@/components/AppSocialsList';
 import AppDocumentsOpen from '@/components/ui/custom-ui/AppDocumentsOpen';
 import AppCopyToClipboardButton from '@/components/ui/custom-ui/AppCopyToClipboard';

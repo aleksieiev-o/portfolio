@@ -16,10 +16,11 @@ const SheetClose = SheetPrimitive.Close;
 /* tslint:disable */
 /* eslint-disable */
 const SheetPortal = ({
-  className,
+  // TODO className was temporary removed
+  /*className,*/
   ...props
 }: SheetPrimitive.DialogPortalProps) => (
-  <SheetPrimitive.Portal className={cn(className)} {...props} />
+  <SheetPrimitive.Portal /*className={cn(className)} {...props}*/ />
 );
 SheetPortal.displayName = SheetPrimitive.Portal.displayName;
 
