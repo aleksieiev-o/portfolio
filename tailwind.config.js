@@ -1,4 +1,15 @@
 /** @type {import('tailwindcss').Config} */
+
+const SCREENS = {
+  'xs': '390px',
+  'sm': '640px',
+  'md': '768px',
+  '2md': '860px',
+  'lg': '1024px',
+  'xl': '1280px',
+  '2xl': '1400px',
+}
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -8,11 +19,12 @@ module.exports = {
     './src/**/*.{ts,tsx}',
 	],
   theme: {
+    screens: SCREENS,
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": SCREENS['2xl'],
       },
     },
     extend: {

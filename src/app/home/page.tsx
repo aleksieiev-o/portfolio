@@ -17,7 +17,7 @@ const HomePage: FC = async (): Promise<ReactElement> => {
   return (
     <section className={'w-full h-full grid grid-cols-1 content-center overflow-hidden'}>
       <ScrollContentWrapper>
-        <div className={'grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 py-4'}>
+        <div className={'grid grid-cols-1 2md:grid-cols-2 gap-6 2md:gap-12 py-4'}>
           <HomeInfo personalInfo={personalInfo} documents={documents}/>
 
           <div className={'grid grid-cols-1 content-center justify-items-center'}>
