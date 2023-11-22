@@ -5,7 +5,7 @@ import AppThemeChange from '@/components/ui/custom-ui/AppThemeChange';
 
 const AppHeader: FC = (): ReactElement => {
   return (
-    <header className={'w-full h-20 flex flex-row items-center justify-between overflow-hidden shadow-md'}>
+    <header className={'w-full h-20 flex flex-row items-center justify-between overflow-hidden border-b shadow-md'}>
       <Link href={RoutePath.HOME} className={'w-12 md:w-20 h-12 md:h-20 mr-4 flex items-center justify-center'}>
         OA
       </Link>
