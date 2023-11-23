@@ -40,7 +40,7 @@ const ProjectCardContent: FC<Props> = ({project}): ReactElement => {
             <AccordionContent>
               <div className={'lex flex-wrap'}>
                 {technologies.map((technology, idx) => (
-                  <Badge key={`tech_${idx}`} variant={'destructive'} title={technology} className={'mr-2 mb-2'}>
+                  <Badge key={`tech_${idx}`} variant={'accent'} title={technology} className={'mr-2 mb-2'}>
                     {technology}
                   </Badge>
                 ))}
