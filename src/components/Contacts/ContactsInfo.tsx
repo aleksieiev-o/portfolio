@@ -38,12 +38,12 @@ const ContactsInfo: FC<Props> = (props): ReactElement => {
             <MapPin/>
 
             {/* TODO add map link to admin site */}
-            <a href={'https://maps.app.goo.gl/9MZgWWPt1Q5YFcMV9'} target={'_blank'} className={'text-md'}>
+            <a href={personalInfo.mapPoint} target={'_blank'} className={'text-md'}>
               {personalInfo.country}, {personalInfo.town}
             </a>
 
             <AppCopyToClipboardButton
-              copiedValue={'https://maps.app.goo.gl/9MZgWWPt1Q5YFcMV9'}
+              copiedValue={personalInfo.mapPoint}
               toastSuccessMessage={'Address link has been copied'}
               toastErrorMessage={'Address link has not been copied'}
               className={'ml-auto'}/>
