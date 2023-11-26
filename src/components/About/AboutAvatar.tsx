@@ -16,7 +16,7 @@ const AboutAvatar: FC<Props> = (props): ReactElement => {
 
   return (
     <div className={'p-2 grid grid-cols-1 content-start justify-items-center gap-4 xl:gap-6'}>
-      <Avatar>
+      <Avatar className={'shadow-md'}>
         <AvatarImage src={file.fileSrc} alt={file.fileName}/>
 
         <AvatarFallback>OA</AvatarFallback>
