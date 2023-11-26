@@ -13,7 +13,7 @@ const AppLocaleChange: FC = (): ReactElement => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="shadow-md" title={'Change locale menu'}>
+        <Button variant={'default'} size="icon" className="shadow-md" title={'Change locale menu'}>
           <Languages className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
 
           <span className="sr-only">

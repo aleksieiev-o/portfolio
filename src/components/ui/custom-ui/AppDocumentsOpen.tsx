@@ -27,7 +27,7 @@ const AppDocumentsOpen: FC<Props> = (props): ReactElement => {
     <DropdownMenu onOpenChange={handleDropdown}>
       <DropdownMenuTrigger asChild>
         <Button
-          variant={'outline'}
+          variant={'default'}
           className={'shadow-md'}
           title={'Documents list menu'}>
           <p className={'mr-4'}>

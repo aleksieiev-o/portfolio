@@ -25,7 +25,7 @@ const AppSocialsList: FC<Props> = (props): ReactElement => {
         <Button
           onClick={() => handleButton(social.url)}
           key={social.id}
-          variant={'outline'}
+          variant={'default'}
           size={'icon'}
           title={social.title}
           className={'shadow-md'}>

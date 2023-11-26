@@ -10,7 +10,7 @@ const GoHomeButton: FC = (): ReactElement => {
   const router = useRouter();
 
   return (
-    <Button onClick={() => router.replace(RoutePath.HOME)} variant={'outline'} className={'shadow-md'} title={'Go home'}>
+    <Button onClick={() => router.replace(RoutePath.HOME)} variant={'default'} className={'shadow-md'} title={'Go home'}>
       <Home className={'w-4 h-4 mr-4'}/>
 
       Go home

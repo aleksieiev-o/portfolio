@@ -23,7 +23,7 @@ const AppNavMenuMobile: FC = (): ReactElement => {
     <span className={'md:hidden'}>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="shadow-md" title={'Toggle navigation menu'}>
+          <Button variant={'default'} size="icon" className="shadow-md" title={'Toggle navigation menu'}>
             <Menu className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all"/>
           </Button>
         </SheetTrigger>

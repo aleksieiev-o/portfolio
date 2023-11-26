@@ -16,7 +16,7 @@ const ProjectCardFooter: FC<Props> = ({project}): ReactElement => {
       <div className={'w-full flex justify-end'}>
         <Button
           onClick={() => window.open(repository, '_blank')}
-          variant={'outline'}
+          variant={'default'}
           size={'icon'}
           className={'shadow-md mr-4'}
           title={'Open repository'}>
@@ -25,7 +25,7 @@ const ProjectCardFooter: FC<Props> = ({project}): ReactElement => {
 
         <Button
           onClick={() => window.open(demo, '_blank')}
-          variant={'outline'}
+          variant={'default'}
           size={'icon'}
           className={'shadow-md'}
           title={'Open demo page'}>

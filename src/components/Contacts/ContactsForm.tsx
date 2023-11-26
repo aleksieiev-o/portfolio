@@ -128,7 +128,7 @@ const ContactsForm: FC = (): ReactElement => {
           </div>
 
           <div className={'grid grid-cols-2 gap-4 md:gap-8 w-full'}>
-            <Button type={'submit'} variant={'outline'} title={'Send a message'} className={'shadow-md'}>
+            <Button type={'submit'} variant={'default'} title={'Send a message'} className={'shadow-md'}>
               <p className={'mr-4'}>Send</p>
 
               <SendHorizontal className={'w-4 h-4'}/>
