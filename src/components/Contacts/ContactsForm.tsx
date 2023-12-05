@@ -2,7 +2,7 @@
 
 import React, {FC, ReactElement, useMemo} from 'react';
 import {Button} from '@/components/ui/button';
-import {SendHorizontal} from 'lucide-react';
+import {Loader2, SendHorizontal} from 'lucide-react';
 import {object, string, z, ZodRawShape} from 'zod';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
@@ -11,6 +11,8 @@ import {ZodString} from 'zod/lib/types';
 import {Form} from '@/components/ui/form';
 import ContactsFormField from '@/components/Contacts/ContactsFormField';
 import {useToast} from '@/components/ui/use-toast';
+import {sendContactsForm} from '@/utils/sendContactsForm';
+import {useLoading} from '@/hooks/useLoading';
 
 export interface RawShape extends ZodRawShape {
   firstName: ZodString;
@@ -22,6 +24,7 @@ export interface RawShape extends ZodRawShape {
 
 const ContactsForm: FC = (): ReactElement => {
   const { toast } = useToast();
+  const { isLoading, setIsLoading } = useLoading();
 
   const shape = useMemo<RawShape>(() => ({
     firstName: string({ required_error: 'Field is required', invalid_type_error: 'Value must be a string' })
@@ -61,16 +64,27 @@ const ContactsForm: FC = (): ReactElement => {
     },
   });
 
-  const handleSubmitForm = (values: z.infer<typeof formSchema>) => {
-    console.warn('Contacts form values', values);
+  const handleSubmitForm = async (values: z.infer<typeof formSchema>) => {
+    setIsLoading(true);
 
-    // TODO add form handler
-    toast({
-      title: 'Sorry. The form is not working yet',
-      description: 'To contact me, please use the buttons in the information section or email.',
-    });
+    try {
+      await sendContactsForm(values);
 
-    formModel.reset();
+      toast({
+        title: 'Success',
+        description: 'Your message has been sent.',
+      });
+
+      formModel.reset();
+    } catch (err) {
+      toast({
+        title: 'Failure',
+        description: 'Your message has not been sent. Something went wrong.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -128,10 +142,19 @@ const ContactsForm: FC = (): ReactElement => {
           </div>
 
           <div className={'grid grid-cols-2 gap-4 md:gap-8 w-full'}>
-            <Button type={'submit'} variant={'default'} title={'Send a message'} className={'shadow-md'}>
-              <p className={'mr-4'}>Send</p>
-
-              <SendHorizontal className={'w-4 h-4'}/>
+            <Button type={'submit'} variant={'default'} title={'Send a message'} className={'shadow-md'} disabled={isLoading}>
+              {
+                isLoading ?
+                  <>
+                    <Loader2 className={'h-4 w-4 animate-spin'} />
+                    <p className={'ml-4'}>Please wait</p>
+                  </>
+                  :
+                  <>
+                    <p className={'mr-4'}>Send</p>
+                    <SendHorizontal className={'w-4 h-4'}/>
+                  </>
+              }
             </Button>
           </div>
         </form>
