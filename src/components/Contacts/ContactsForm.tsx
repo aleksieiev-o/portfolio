@@ -102,7 +102,8 @@ const ContactsForm: FC = (): ReactElement => {
               name={'firstName'}
               label={'First name'}
               placeholder={'Enter your first name'}
-              required={true}/>
+              required={true}
+              disabled={isLoading}/>
 
             <ContactsFormField
               mode={'input'}
@@ -110,7 +111,8 @@ const ContactsForm: FC = (): ReactElement => {
               name={'lastName'}
               label={'Last name'}
               placeholder={'Enter your last name'}
-              required={true}/>
+              required={true}
+              disabled={isLoading}/>
           </div>
 
           <div className={'grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 w-full'}>
@@ -120,7 +122,8 @@ const ContactsForm: FC = (): ReactElement => {
               name={'subject'}
               label={'Subject'}
               placeholder={'Enter your subject'}
-              required={true}/>
+              required={true}
+              disabled={isLoading}/>
 
             <ContactsFormField
               mode={'input'}
@@ -128,7 +131,8 @@ const ContactsForm: FC = (): ReactElement => {
               name={'email'}
               label={'E-mail'}
               placeholder={'Enter your email'}
-              required={true}/>
+              required={true}
+              disabled={isLoading}/>
           </div>
 
           <div className={'grid grid-cols-1 w-full'}>
@@ -138,7 +142,8 @@ const ContactsForm: FC = (): ReactElement => {
               name={'message'}
               label={'Message'}
               placeholder={'Enter your message'}
-              required={true}/>
+              required={true}
+              disabled={isLoading}/>
           </div>
 
           <div className={'grid grid-cols-2 gap-4 md:gap-8 w-full'}>

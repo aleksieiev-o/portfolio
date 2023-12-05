@@ -12,10 +12,11 @@ interface Props {
   label: string;
   placeholder: string;
   required: boolean;
+  disabled: boolean;
 }
 
 const ContactsFormField: FC<Props> = (props): ReactElement => {
-  const {mode, formModel, name, label, placeholder, required} = props;
+  const {mode, formModel, name, label, placeholder, required, disabled} = props;
 
   return (
     <FormField
@@ -36,12 +37,14 @@ const ContactsFormField: FC<Props> = (props): ReactElement => {
                 placeholder={placeholder}
                 aria-required={required}
                 className={'shadow-md'}
+                disabled={disabled}
                 {...field}/>
               :
               <Textarea
                 placeholder={placeholder}
                 aria-required={required}
                 className={'shadow-md'}
+                disabled={disabled}
                 {...field}/>
             }
           </FormControl>
