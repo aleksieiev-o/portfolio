@@ -68,7 +68,7 @@ const ContactsForm: FC = (): ReactElement => {
     setIsLoading(true);
 
     try {
-      await sendContactsForm(values);
+      await sendContactsForm<z.infer<typeof formSchema>>(values);
 
       toast({
         title: 'Success',

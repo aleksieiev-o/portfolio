@@ -1,4 +1,4 @@
-export const sendContactsForm = async (data) => fetch('/api/contacts', {
+export const sendContactsForm = async <T>(data: T) => fetch('/api/contacts', {
   method: 'POST',
   body: JSON.stringify(data),
   headers: {
