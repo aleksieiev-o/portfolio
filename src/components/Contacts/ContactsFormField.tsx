@@ -27,7 +27,7 @@ const ContactsFormField: FC<Props> = (props): ReactElement => {
           <FormLabel aria-required={required} className={'flex'}>
             <span className={'mr-0.5'}>{label}</span>
 
-            <Asterisk className={'w-2.5 h-2.5 self-start'}/>
+            <Asterisk className={'w-2.5 h-2.5 stroke-destructive self-start'}/>
           </FormLabel>
 
           <FormControl aria-required={required}>

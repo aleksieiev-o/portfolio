@@ -2,7 +2,7 @@
 
 import React, {FC, ReactElement, useMemo} from 'react';
 import {Button} from '@/components/ui/button';
-import {Loader2, SendHorizontal} from 'lucide-react';
+import {Asterisk, Loader2, SendHorizontal} from 'lucide-react';
 import {object, string, z, ZodRawShape} from 'zod';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
@@ -144,6 +144,12 @@ const ContactsForm: FC = (): ReactElement => {
               placeholder={'Enter your message'}
               required={true}
               disabled={isLoading}/>
+          </div>
+
+          <div className={'flex gap-2 items-center'}>
+            <Asterisk className={'w-2.5 h-2.5 stroke-destructive self-start'}/>
+            <span className={'text-sm'}>-</span>
+            <span className={'text-sm'}>Required field</span>
           </div>
 
           <div className={'grid grid-cols-2 gap-4 md:gap-8 w-full'}>
