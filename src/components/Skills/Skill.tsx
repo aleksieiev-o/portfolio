@@ -17,7 +17,6 @@ const Skill: FC<Props> = ({skill}): ReactElement => {
         <div
           className={'text-xs font-medium text-center p-1 leading-none rounded-full'}
           style={{ width: `${skill.experience}%`, backgroundColor: skill.color }}>
-
         </div>
       </div>
     </div>

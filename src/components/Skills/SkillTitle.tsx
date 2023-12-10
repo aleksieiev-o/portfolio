@@ -15,9 +15,9 @@ const SkillTitle: FC<Props> = ({skill}): ReactElement => {
     <div className={'flex items-start no-wrap w-full'}>
       <span className={'text-lg font-bold mr-6'}>
         <CountUp
-          start={focus ? 0 : 0}
+          start={focus ? 0 : Number(experience)}
           end={Number(experience)}
-          duration={1}
+          duration={3}
           redraw={true}>
           {({ countUpRef }) => (
             <VisibilitySensor
