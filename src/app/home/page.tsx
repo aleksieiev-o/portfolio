@@ -1,4 +1,4 @@
-import {FC, ReactElement} from 'react';
+import React, {FC, ReactElement} from 'react';
 import {IDocument, IFile, IPersonalInfo} from 'my-portfolio-types';
 import {fetchPersonalInfo} from '@/services/personalInfo.service';
 import {fetchMainImage} from '@/services/files.service';
