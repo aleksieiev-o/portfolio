@@ -33,7 +33,7 @@ const AboutInfo: FC<Props> = (props): ReactElement => {
   return (
     <div className={'grid grid-cols-1 content-start justify-items-center gap-8 w-full h-full'}>
       <div className={'grid grid-cols-1 content-start justify-items-start gap-4'}>
-        <h6 className={'text-xl font-bold'}>Biography</h6>
+        <h6 className={'text-xl font-bold'}>Who I am</h6>
 
         <div className={'w-full'}>
           <p className={''}>
