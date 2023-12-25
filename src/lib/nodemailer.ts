@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import {RawShape} from '@/components/Contacts/ContactsForm';
+import {IUserRequestShape} from '@/types/UserRequestShape.interface';
 
 const receiverEmail = process.env.NM_EMAIL;
 const pass = process.env.NM_EMAIL_PASS;
@@ -12,7 +12,7 @@ export const transporter = nodemailer.createTransport({
 	},
 });
 
-export const createMessage = (mess: RawShape) => {
+export const createMessage = (mess: IUserRequestShape) => {
 	const {firstName, lastName, subject, email: senderEmail, message} = mess;
 
 	return {

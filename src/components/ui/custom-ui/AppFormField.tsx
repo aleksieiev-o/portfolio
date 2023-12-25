@@ -2,13 +2,13 @@ import React, {FC, ReactElement} from 'react';
 import {FormControl, FormField, FormItem, FormLabel, FormMessage} from '@/components/ui/form';
 import {Asterisk} from 'lucide-react';
 import {Input} from '@/components/ui/input';
-import {RawShape} from '@/components/Contacts/ContactsForm';
 import {Textarea} from '@/components/ui/textarea';
+import {IUserRequestShape} from '@/types/UserRequestShape.interface';
 
 interface Props {
   mode: 'input' | 'textarea';
   formModel: any; // TODO fix it
-  name: keyof RawShape;
+  name: keyof IUserRequestShape;
   label: string;
   placeholder: string;
   required: boolean;
