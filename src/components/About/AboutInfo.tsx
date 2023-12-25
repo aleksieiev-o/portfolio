@@ -1,6 +1,6 @@
 import React, {FC, ReactElement} from 'react';
 import {IDocument, IPersonalInfo} from 'my-portfolio-types';
-import AppDocumentsOpen from '@/components/ui/custom-ui/AppDocumentsOpen';
+import AppDocumentRequest from '@/components/ui/custom-ui/AppDocumentRequest';
 
 interface Props {
   personalInfo: IPersonalInfo;
@@ -45,7 +45,7 @@ const AboutInfo: FC<Props> = (props): ReactElement => {
       <div className={'grid grid-cols-1 content-start justify-items-start gap-4 w-full'}>
         <h6 className={'text-xl font-bold'}>My documents</h6>
 
-        <AppDocumentsOpen documents={documents}/>
+        <AppDocumentRequest documents={documents}/>
       </div>
 
       <div className={'grid grid-cols-1 content-start justify-items-start gap-4 w-full'}>

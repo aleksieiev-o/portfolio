@@ -4,7 +4,7 @@ import React, {FC, ReactElement} from 'react';
 import {IDocument, IPersonalInfo, ISocial} from 'my-portfolio-types';
 import {Mail, MapPin} from 'lucide-react';
 import AppSocialsList from '@/components/AppSocialsList';
-import AppDocumentsOpen from '@/components/ui/custom-ui/AppDocumentsOpen';
+import AppDocumentRequest from '@/components/ui/custom-ui/AppDocumentRequest';
 import AppCopyToClipboardButton from '@/components/ui/custom-ui/AppCopyToClipboard';
 
 interface Props {
@@ -66,9 +66,9 @@ const ContactsInfo: FC<Props> = (props): ReactElement => {
       <AppSocialsList socials={socials}/>
 
       <div className={'grid grid-cols-1 content-center justify-items-start gap-2 xl:gap-4'}>
-        <p className={'text-md'}>Here is a list of documents you can review</p>
+        <p className={'text-md'}>Here is a list of documents you can request</p>
 
-        <AppDocumentsOpen documents={documents}/>
+        <AppDocumentRequest documents={documents}/>
       </div>
     </div>
   );

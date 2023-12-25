@@ -15,7 +15,7 @@ interface Props {
   disabled: boolean;
 }
 
-const ContactsFormField: FC<Props> = (props): ReactElement => {
+const AppFormField: FC<Props> = (props): ReactElement => {
   const {mode, formModel, name, label, placeholder, required, disabled} = props;
 
   return (
@@ -55,4 +55,4 @@ const ContactsFormField: FC<Props> = (props): ReactElement => {
   );
 };
 
-export default ContactsFormField;
+export default AppFormField;

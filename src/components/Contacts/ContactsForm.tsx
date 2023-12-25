@@ -3,30 +3,23 @@
 import React, {FC, ReactElement, useMemo} from 'react';
 import {Button} from '@/components/ui/button';
 import {Asterisk, Loader2, SendHorizontal} from 'lucide-react';
-import {object, string, z, ZodRawShape} from 'zod';
+import {object, string, z} from 'zod';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {useForm} from 'react-hook-form';
 // @ts-ignore
 import {ZodString} from 'zod/lib/types';
 import {Form} from '@/components/ui/form';
-import ContactsFormField from '@/components/Contacts/ContactsFormField';
+import AppFormField from '@/components/ui/custom-ui/AppFormField';
 import {useToast} from '@/components/ui/use-toast';
 import {sendContactsForm} from '@/utils/sendContactsForm';
 import {useLoading} from '@/hooks/useLoading';
-
-export interface RawShape extends ZodRawShape {
-  firstName: ZodString;
-  lastName: ZodString;
-  email: ZodString;
-  subject: ZodString;
-  message: ZodString;
-}
+import {IUserRequestShape} from '@/types/UserRequestShape.interface';
 
 const ContactsForm: FC = (): ReactElement => {
   const { toast } = useToast();
   const { isLoading, setIsLoading } = useLoading();
 
-  const shape = useMemo<RawShape>(() => ({
+  const shape = useMemo<IUserRequestShape>(() => ({
     firstName: string({ required_error: 'Field is required', invalid_type_error: 'Value must be a string' })
       .trim()
       .min(2, { message: 'Must be 2 or more characters long' })
@@ -50,7 +43,7 @@ const ContactsForm: FC = (): ReactElement => {
   }), []);
 
   const formSchema = useMemo(() => {
-    return object<RawShape>(shape);
+    return object<IUserRequestShape>(shape);
   }, [shape]);
 
   const formModel = useForm<z.infer<typeof formSchema>>({
@@ -96,7 +89,7 @@ const ContactsForm: FC = (): ReactElement => {
       <Form {...formModel}>
         <form onSubmit={formModel.handleSubmit(handleSubmitForm)} className={'grid grid-cols-1 gap-4 md:gap-8 w-full'}>
           <div className={'grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 w-full'}>
-            <ContactsFormField
+            <AppFormField
               mode={'input'}
               formModel={formModel}
               name={'firstName'}
@@ -105,7 +98,7 @@ const ContactsForm: FC = (): ReactElement => {
               required={true}
               disabled={isLoading}/>
 
-            <ContactsFormField
+            <AppFormField
               mode={'input'}
               formModel={formModel}
               name={'lastName'}
@@ -116,7 +109,7 @@ const ContactsForm: FC = (): ReactElement => {
           </div>
 
           <div className={'grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 w-full'}>
-            <ContactsFormField
+            <AppFormField
               mode={'input'}
               formModel={formModel}
               name={'subject'}
@@ -125,7 +118,7 @@ const ContactsForm: FC = (): ReactElement => {
               required={true}
               disabled={isLoading}/>
 
-            <ContactsFormField
+            <AppFormField
               mode={'input'}
               formModel={formModel}
               name={'email'}
@@ -136,7 +129,7 @@ const ContactsForm: FC = (): ReactElement => {
           </div>
 
           <div className={'grid grid-cols-1 w-full'}>
-            <ContactsFormField
+            <AppFormField
               mode={'textarea'}
               formModel={formModel}
               name={'message'}

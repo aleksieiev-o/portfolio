@@ -2,7 +2,7 @@
 
 import React, {FC, ReactElement} from 'react';
 import {IDocument, IPersonalInfo} from 'my-portfolio-types';
-import AppDocumentsOpen from '@/components/ui/custom-ui/AppDocumentsOpen';
+import AppDocumentRequest from '@/components/ui/custom-ui/AppDocumentRequest';
 
 interface Props {
   personalInfo: IPersonalInfo;
@@ -30,9 +30,9 @@ const HomeInfo: FC<Props> = (props): ReactElement => {
         </p>
 
         <div className={'grid grid-cols-1 content-center justify-items-start gap-3 xl:gap-6'}>
-          <p className={'text-lg sm:text-xl'}>Here is a list of documents you can review</p>
+          <p className={'text-lg sm:text-xl'}>Here is a list of documents you can request</p>
 
-          <AppDocumentsOpen documents={documents}/>
+          <AppDocumentRequest documents={documents}/>
         </div>
       </div>
     </div>
