@@ -166,7 +166,7 @@ const AppDocumentRequest: FC<Props> = (props): ReactElement => {
             <DialogTitle className={'text-xl'}>Request the documents</DialogTitle>
 
             <DialogDescription className={'text-md'}>
-              Input your first and last name, email and select the documents you are interested in in the drop-down menu. Then click please the Submit button.
+              Input your first and last name, email and select the documents you are interested in the drop-down menu. Then click please the Submit button.
             </DialogDescription>
           </DialogHeader>
 
